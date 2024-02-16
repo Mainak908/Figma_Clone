@@ -12,6 +12,15 @@ import LiveCursor from "./cursor/LiveCursor";
 import FlyingReaction from "./reaction/FlyingReaction";
 import ReactionSelector from "./reaction/ReactionButton";
 
+interface MyPresence {
+  cursor: string;
+  message: string;
+}
+
+interface MyPresenceHookResult {
+  myPresence: MyPresence;
+  updateMyPresence: () => void;
+}
 const Live = () => {
   const others = useOthers();
   const [{ cursor, message }, updateMyPresence] = useMyPresence() as any;
